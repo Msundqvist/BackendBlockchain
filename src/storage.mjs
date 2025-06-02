@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import AppError from './models/appError.mjs';
 
 const __fileName = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,6 +20,10 @@ export default class Storage {
     }
 
     async writeToFile(data) {
-        await fs.writeFile(this.#filePath, data, 'utf-8')
+        try {
+            await fs.writeFile(this.#filePath, data, 'utf-8')
+        } catch (error) {
+            throw new AppError(error, 500)
+        }
     }
 }
