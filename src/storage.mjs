@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import AppError from './models/appError.mjs';
 
 const __fileName = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(__fileName);
 
 export default class Storage {
     #filePath = undefined;
@@ -15,8 +15,12 @@ export default class Storage {
     }
 
     async readFromFile() {
-        const content = await fs.readFile(this.#filePath, 'utf-8');
-        return JSON.parse(content)
+        try {
+            const content = await fs.readFile(this.#filePath, 'utf-8');
+            return JSON.parse(content)
+        } catch (error) {
+            throw new AppError(error, 500);
+        }
     }
 
     async writeToFile(data) {
