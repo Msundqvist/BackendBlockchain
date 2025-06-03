@@ -15,4 +15,17 @@ export default class Block {
     static genesis() {
         return new this(GENESIS_BLOCK)
     }
+
+    static adjustDifficultyLevel({ block, timestamp }) {
+        const { difficulty } = block;
+
+        if (difficulty < 1) return 1;
+
+        if (timestamp - block.timestamp > MINE_RATE) {
+            return difficulty - 1
+        }
+        return difficulty + 1
+
+
+    }
 }
