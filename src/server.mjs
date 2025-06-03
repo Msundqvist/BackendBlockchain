@@ -1,5 +1,4 @@
 import { app } from "./app.mjs";
-import dotenv from 'dotenv'
 import AppError from "./models/appError.mjs";
 import errorHandler from "./middleware/errorHandler.mjs";
 import { logger } from "./middleware/logger.mjs";

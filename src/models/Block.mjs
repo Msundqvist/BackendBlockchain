@@ -4,7 +4,8 @@ import { createHash } from '../utilities/hash.mjs';
 
 
 export default class Block {
-    constructor({ timestamp, hash, lastHash, data, nonce, difficulty }) {
+    constructor({ timestamp, hash, lastHash, data, nonce, difficulty, id }) {
+        this.id = id;
         this.timestamp = timestamp;
         this.hash = hash;
         this.lastHash = lastHash;

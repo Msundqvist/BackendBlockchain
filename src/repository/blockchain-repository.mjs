@@ -1,5 +1,6 @@
 import Storage from '../storage.mjs';
 import AppError from '../models/appError.mjs';
+import crypto from 'crypto'
 export default class BlockchainRepository {
     #storage = undefined
 
@@ -19,6 +20,7 @@ export default class BlockchainRepository {
     }
 
     async addBlock(block) {
+        block.id = crypto.randomUUID().replaceAll('-', '')
         const blocks = await this.#storage.readFromFile();
         blocks.push(block);
         await this.#storage.writeToFile(JSON.stringify(blocks))
