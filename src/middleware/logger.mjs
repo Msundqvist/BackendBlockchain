@@ -6,8 +6,6 @@ export const logger = async (req, res, next) => {
     const message = `${req.method} ${req.orginalUrl} - ${new Date().toLocaleDateString('sv-SE')} ${new Date().toLocaleTimeString('se-SE')}`
 
 
-
-
     await fs.appendFile(filePath, message + '\n');
 
     next();
