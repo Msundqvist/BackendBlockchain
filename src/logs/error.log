@@ -1,0 +1,4 @@
+Method: GET Url: undefined Date: 2025-06-03 Time: 2025-06-03
+    Success: undefined
+    - Message: SyntaxError: Unexpected token '}', "[{"block":}]
+" is not valid JSON
