@@ -21,4 +21,11 @@ for (let i = 0; i < 10000; i++) {
 
     average = times.reduce((sum, value) => sum + value) / times.length;
 
+    console.log(
+        `Time it took to mine a block: Blocknummer: ${i + 1}.
+        Time it took: ${timeDiff}ms. 
+        Difficulty level: ${nextBlock.difficulty}.
+        Hash: ${hash}. Average time: ${average.toFixed(2)}ms.`
+    )
+
 }
