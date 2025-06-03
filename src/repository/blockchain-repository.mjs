@@ -12,8 +12,8 @@ export default class BlockchainRepository {
         return blocks
     }
 
-    findBlock() {
-        const blocks = this.#storage.readFromFile();
+    async findBlock(id) {
+        const blocks = await this.#storage.readFromFile();
         const block = blocks.find((b) => b.id === id)
         if (!block) throw new AppError(`Vi kunde inte hitta det block du sökte med id ${id}`, 404)
         return block
@@ -24,6 +24,6 @@ export default class BlockchainRepository {
         const blocks = await this.#storage.readFromFile();
         blocks.push(block);
         await this.#storage.writeToFile(JSON.stringify(blocks))
-        return block
+        return blocks
     }
 }

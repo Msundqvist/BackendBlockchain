@@ -13,7 +13,7 @@ export default async (err, req, res, next) => {
         message: err.message
     })
 
-    const message = `Method: ${req.method} Url: ${req.orginalUrl} Date: ${new Date().toLocaleDateString('sv-SE')} Time: ${new Date().toLocaleDateString('sv-SE')}
+    const message = `Method: ${req.method} Url: ${req.originalUrl} Date: ${new Date().toLocaleDateString('sv-SE')} Time: ${new Date().toLocaleTimeString('sv-SE')}
     Success: ${err.success}
     - Message: ${err.message}\n`;
 
