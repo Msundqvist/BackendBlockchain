@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import path from 'path';
+import path from 'path'
 
 export default async (err, req, res, next) => {
     const filePath = path.join(__appdir, 'logs', 'error.log');
@@ -15,7 +15,10 @@ export default async (err, req, res, next) => {
 
     const message = `Method: ${req.method} Url: ${req.originalUrl} Date: ${new Date().toLocaleDateString('sv-SE')} Time: ${new Date().toLocaleTimeString('sv-SE')}
     Success: ${err.success}
-    - Message: ${err.message}\n`;
+    - Message: ${err.message}
+    StatusCode : ${err.statusCode}\n`;
 
     await fs.appendFile(filePath, message)
+
+    next();
 }

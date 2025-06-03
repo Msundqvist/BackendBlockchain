@@ -8,3 +8,12 @@ Method: GET Url: undefined Date: 2025-06-03 Time: 2025-06-03
 Method: GET Url: undefined Date: 2025-06-03 Time: 2025-06-03
     Success: undefined
     - Message: block is not defined
+Method: GET Url: /api/v1/block Date: 2025-06-03 Time: 15:52:49
+    Success: undefined
+    - Message: Vi kunde inte hitta resursen du söker, /api/v1/block
+Method: GET Url: /api/v1/blocks/gdfg Date: 2025-06-03 Time: 15:54:07
+    Success: undefined
+    - Message: Vi kunde inte hitta det block du sökte med id gdfg
+Method: GET Url: /api/v1/blocks/gdfg Date: 2025-06-03 Time: 15:55:45
+    Success: undefined
+    - Message: Vi kunde inte hitta det block du sökte med id gdfg
