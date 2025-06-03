@@ -1,16 +1,13 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import AppError from './models/appError.mjs';
 
-const __fileName = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__fileName);
 
 export default class Storage {
     #filePath = undefined;
 
     constructor(folder, filename) {
-        this.#filePath = path.join(__dirname, folder, filename);
+        this.#filePath = path.join(__appdir, folder, filename);
 
     }
 
