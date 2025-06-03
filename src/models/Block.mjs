@@ -28,7 +28,7 @@ export default class Block {
         return difficulty + 1
     }
 
-    static mineBlock({ previousBlock, data }) {
+    static createBlock({ previousBlock, data }) {
         let timestamp, hash;
         const lastHash = previousBlock.hash;
         let { difficulty } = previousBlock;

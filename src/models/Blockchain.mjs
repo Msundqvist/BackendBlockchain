@@ -6,8 +6,8 @@ export default class Blockchain {
     }
 
     addBlock({ data }) {
-        const addedBlock = Block.mineBlock({ previousBlock: this.chain.at(-1), data })
-        this.chain.push(addedBlock)
+        const newBlock = Block.createBlock({ previousBlock: this.chain.at(-1), data })
+        this.chain.push(newBlock)
     }
 
     static isValid(chain) {
