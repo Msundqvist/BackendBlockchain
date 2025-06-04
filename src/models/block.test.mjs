@@ -2,7 +2,7 @@ import { describe, expect } from "vitest";
 import Block
     from "./Block.mjs";
 
-describe('Bloc', () => {
+describe('Block', () => {
     //add dummy data...
     const id = 'id'
     const block = new Block(id)
